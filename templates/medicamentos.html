@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medicamentos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🧾 Catálogo de Medicamentos</h2>
+
+        <form method="get" action="{{ url_for('buscar') }}">
+            <input type="text" name="q" placeholder="Buscar medicamento..." required>
+            <button type="submit" class="btn">Buscar</button>
+        </form>
+
+        <ul>
+            {% for item in catalogo %}
+                <li>
+                    {{ item.nome }} — {{ item.preco }} Kz — Estoque: {{ item.estoque }}
+                    {% if item.estoque > 0 %}
+                        <a href="{{ url_for('adicionar', id=item.id) }}" class="btn">Selecionar</a>
+                    {% else %}
+                        <span style="color: red;">Indisponível</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('carrinho') }}" class="btn">Ver carrinho</a>
+    </div>
+</body>
+</html>

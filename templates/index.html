@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farmácia Isaías Muchamuene</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Farmácia Isaías Muchamuene</h1>
+        <p><strong>Bem-vindo à farmácia online!</strong></p>
+        <p>Selecione seus medicamentos, nós organizamos tudo, e você retira com rapidez e segurança.</p>
+
+        <a href="{{ url_for('lista_medicamentos') }}" class="btn">Ver medicamentos</a>
+
+        <hr style="margin: 40px 0;">
+
+        <h3>📞 Apoio ao Cliente</h3>
+        <p>Precisa de ajuda com seu pedido? Fale conosco diretamente pelo WhatsApp:</p>
+        <a href="https://wa.me/244948275407" class="whatsapp-btn" target="_blank">Contactar via WhatsApp</a>
+    </div>
+</body>
+</html>
